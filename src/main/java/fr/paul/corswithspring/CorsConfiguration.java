@@ -19,6 +19,7 @@ public class CorsConfiguration {
 
     /*
     This CORS Mapping automatically resolve cors for the path specified
+    The configuration take priority over annotation in controller
      */
     @Bean
     public WebMvcConfigurer corsConfigurer() {
