@@ -1,4 +1,4 @@
-#CORS with Spring Boot
+# CORS with Spring Boot
 This repository contains multiple example on how to handle CORS with spring boot
 
 This follow up my article available here (in French):
