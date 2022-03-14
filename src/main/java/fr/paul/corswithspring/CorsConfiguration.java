@@ -14,8 +14,8 @@ public class CorsConfiguration {
     /*
     The origins are directly loaded from properties
     */
-    @Value("${cors.allowedOriginsInConfig}")
-    private String origins;
+    @Value("#{'${cors.allowedOriginsInConfig}'.split(' ')}")
+    private String[] origins;
 
     /*
     This CORS Mapping automatically resolve cors for the path specified
@@ -27,7 +27,7 @@ public class CorsConfiguration {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/conf-api/**")
-                        .allowedOrigins(origins.split(" "))
+                        .allowedOrigins(origins)
                         .allowedMethods("GET", "PUT", "POST", "PATCH", "DELETE", "OPTIONS")
                         .allowCredentials(true);
             }
